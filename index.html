@@ -16,7 +16,14 @@
 <style>
 body{margin:0;font-family:Poppins,sans-serif;color:#333}
 header{position:fixed;width:100%;background:white;padding:15px 40px;display:flex;justify-content:space-between;box-shadow:0 2px 10px rgba(0,0,0,.05);z-index:999}
-header a{text-decoration:none;color:#333;margin-left:-175px;padding:200px 100px}
+header a{text-decoration:none;color:#333;margin-left:20px}
+
+header nav{
+  margin-left:-175px;
+  padding:0px 100px;
+}
+
+
 .hero{height:100vh;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;color:white}
 .hero h1{font-family:'Playfair Display',serif;font-size:50px}
 .section{padding:30px 20px;text-align:center}
@@ -38,7 +45,7 @@ header a{text-decoration:none;color:#333;margin-left:-175px;padding:200px 100px}
 footer{background:#111;color:white;padding:30px;text-align:center;margin-top:50px}
 
 
-  <!-- social media icon -->
+/* social media icon */
 
 footer {
   text-align: center;
@@ -97,6 +104,93 @@ footer {
   }
 }
 
+
+
+
+
+/*footage facebook */
+
+.facebook-follow {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f1f5f9;
+}
+
+.fb-follow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #1877f2;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.fb-follow-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(24,119,242,.4);
+}
+
+
+
+/* footage facebook in table */
+
+.facebook-section {
+  padding: 60px 20px;
+}
+
+.facebook-container {
+  max-width: 1100px;
+  margin: auto;               /* ✅ centers section */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.facebook-left,
+.facebook-right {
+  flex: 1;
+}
+
+.facebook-left {
+  text-align: left;
+}
+
+.facebook-right {
+  display: flex;
+  justify-content: center;
+}
+
+/* Mobile stacking */
+@media (max-width: 768px) {
+  .facebook-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .facebook-left {
+    text-align: center;
+  }
+}
+
+
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 </style>
 
 
@@ -104,6 +198,14 @@ footer {
 </head>
 
 <body>
+
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+  src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0">
+</script>
+
+
 
 <header>
 <strong>🏝 Villa Navarro Beach Resort & Restaurant</strong>
@@ -230,6 +332,69 @@ Your booking is confirmed only after payment verification.
 </section>
 
 
+
+<section class="facebook-section animate-on-scroll">
+  <div class="facebook-container">
+
+    <!-- LEFT CONTENT -->
+    <div class="facebook-left">
+      <h3>Follow Us on Facebook</h3>
+      <p>See our latest updates</p>
+
+<a href="https://www.facebook.com/pages/Villa-Navarro-Beach-Resort-Caba-La-Union/165925670130765/"
+   target="_blank"
+   class="fb-follow-btn"
+   onclick="trackFacebookClick('follow_button')">
+   Follow Villa Navarro Beach Resort
+</a>
+
+<p class="fb-counter">
+  ⭐ Trusted by <strong><span id="fb-followers">3,000+</span></strong> followers on Facebook
+</p>
+
+    </div>
+
+<!-- RIGHT FACEBOOK EMBED -->
+<div class="facebook-right">
+  <div class="fb-page"
+    data-href="https://www.facebook.com/dennis.arriola.2024/"
+    data-tabs="timeline"
+    data-width="380"
+    data-height="300"
+    data-adapt-container-width="true"
+    data-hide-cover="false"
+    data-show-facepile="true">
+  </div>
+</div>
+
+  </div>
+</section>
+
+    <!-- part of the above FACEBOOK EMBED -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  const elements = document.querySelectorAll('.animate-on-scroll');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  elements.forEach(el => observer.observe(el));
+
+});
+</script>
+
+
+
+
+
 <footer class="footer-content">
 
 Villa Navarro Beach Resort & Restaurant | 📍 Barangay Santiago Norte, Caba, La Union, Philippines
@@ -248,6 +413,9 @@ Villa Navarro Beach Resort & Restaurant | 📍 Barangay Santiago Norte, Caba, La
 </div>
 
 </footer>
+
+
+
 
 <!-- Floating Buttons -->
 <div class="floating-btn">
