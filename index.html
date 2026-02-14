@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Villa Navarro Beach Resort | Caba La Union</title>
+<meta name="description" content="Beachfront stay at Villa Navarro Beach Resort in Caba, La Union. Pool, restaurant, family rooms & sunset views. Book direct today.">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Swiper Carousel -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+<script src="https://js.stripe.com/v3/"></script>
+
+<style>
+body{margin:0;font-family:Poppins,sans-serif;color:#333}
+header{position:fixed;width:100%;background:white;padding:15px 40px;display:flex;justify-content:space-between;box-shadow:0 2px 10px rgba(0,0,0,.05);z-index:999}
+header a{text-decoration:none;color:#333;margin-left:-175px;padding:200px 100px}
+.hero{height:100vh;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;color:white}
+.hero h1{font-family:'Playfair Display',serif;font-size:50px}
+.section{padding:30px 20px;text-align:center}
+.swiper{width:90%;height:400px;margin:40px auto}
+.swiper-slide img{width:100%;height:100%;object-fit:cover;border-radius:15px}
+.amenities{display:flex;flex-wrap:wrap;justify-content:center}
+.card{width:250px;margin:15px;border-radius:15px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.1)}
+.card img{width:100%;height:180px;object-fit:cover}
+.card h4{padding:15px}
+.booking-form{max-width:600px;margin:auto;background:white;padding:30px;border-radius:15px;box-shadow:0 10px 40px rgba(0,0,0,.1)}
+.booking-form input{width:100%;padding:10px;margin:10px 0}
+
+.button{background:#ff7f50;color:white;padding:12px 20px;border:none;border-radius:25px;cursor:pointer}
+.floating-btn{position:fixed;right:20px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:1000}
+.floating-btn a{padding:12px 15px;border-radius:50px;color:white;text-decoration:none;font-weight:bold}
+.whatsapp{background:#25D366}
+.call{background:#007bff}
+
+footer{background:#111;color:white;padding:30px;text-align:center;margin-top:50px}
+
+
+  <!-- social media icon -->
+
+footer {
+  text-align: center;
+}
+
+/* Footer Socials */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-socials img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.85;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-socials img:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* Floating WhatsApp Button */
+.floating-social {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.floating-social img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+}
+
+.floating-social img:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .floating-social {
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+<header>
+<strong>🏝 Villa Navarro Beach Resort & Restaurant</strong>
+<nav>
+<a href="#about">About</a> 
+<a href="#booking">Book</a>
+
+</nav>
+</header>
+
+<section class="hero">
+<div>
+<h1>🏖️ Beachfront Escape in Caba, La Union</h1>
+<p>Relax. Swim. Dine. Experience coastal serenity.</p>
+<button onclick="document.getElementById('booking').scrollIntoView()">Reserve Now</button>
+</div>
+</section>
+
+<section id="about" class="section">
+<h2>🏊 Welcome to Villa Navarro</h2>
+<p>Experience a relaxing beachfront getaway in Caba. Nestled along the sandy shores of the Lingayen Gulf, Villa Navarro Beach Resort & Restaurant offers a laid-back tropical getaway framed by coconut trees, gentle waves, and stunning sunsets. Perfect for families, groups, or anyone craving peace and relaxation, this beachfront hideaway invites you to unwind, explore, and savor simple pleasures by the sea.</p>
+
+<!-- Carousel -->
+<div class="swiper">
+<div class="swiper-wrapper">
+<div class="swiper-slide"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/60/10/f9/villa-navarro-beach-resort.jpg?w=1000&h=-1&s=1"></div>
+<div class="swiper-slide"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/60/15/75/villa-navarro-beach-resort.jpg?w=1000&h=-1&s=1"></div>
+<div class="swiper-slide"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/60/16/a2/villa-navarro-beach-resort.jpg?w=1000&h=-1&s=1"></div>
+<div class="swiper-slide"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/66/0b/20/villa-navarro-beach-resort.jpg?w=800&h=-1&s=1"></div>
+<div class="swiper-slide"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/e1/a8/40/dining-area.jpg?w=1000&h=-1&s=1"></div>
+<div class="swiper-slide"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/60/0d/08/villa-navarro-beach-resort.jpg?w=1000&h=-1&s=1"></div>
+<div class="swiper-slide"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/f3/99/b1/caption.jpg?w=1000&h=-1&s=1"></div>
+
+
+
+</div>
+</div>
+</section>
+
+
+
+
+<section class="section">
+<h2>🌊 Why Choose Villa Navarro? What You’ll Love?</h2>
+
+Villa Navarro is more than a resort—it’s a place where you slow down, connect with nature, and experience beach life at a gentle pace. Whether you’re sipping a drink by the water, sharing a meal with family, or taking an early morning walk along the sand, there’s a moment here that’s just yours.
+
+<div class="amenities">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+<h4>☀️ Relaxing Beachfront Setting</h4>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4">
+<h4>🏊 Reconnect & Refresh</h4>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0">
+<h4>🍽️ Restaurant with Flavor</h4>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72">
+<h4>👨‍👩‍👧 Family-Friendly Fun</h4>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+<h4>📶 Comfortable Amenities</h4>
+</div>
+
+</div>
+</section>
+
+
+
+<section id="contact" class="section">
+  <h2>📍 Location & Access</h2>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3547.885283762758!2d120.33526560000001!3d16.4282572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3391832ed2292959%3A0xf93ec5616cbd98f8!2sVilla%20Navarro%20Beach%20Resort%20-%20Village!5e1!3m2!1sen!2sph!4v1771064940103!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+
+<section id="booking" class="section">
+<h2>Ready for Your La Union Getaway? 🛏️ Book Your Stay Today!</h2>
+
+
+<div class="booking-form">
+
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email" required>
+
+<label>Check-in</label>
+<input type="date" required>
+
+<label>Check-out</label>
+<input type="date" required>
+
+<p><strong>Reservation Fee: ₱1,000 (Deductible from total bill)</strong>
+
+<a href="https://gcash.app.link/pay?number=639XXXXXXXXX" target="_blank">
+<button style="margin-top:45px;">Pay via GCash App</button>
+</a>
+
+<p>Or scan the QR code below and send ₱1,000 reservation fee.</p>
+
+<img src="https://tse2.mm.bing.net/th/id/OIP.KnXtRUzhFrxX4tE7OeRR2gHaJ3?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="GCash QR Code" style="width:250px;margin:20px 0;">
+<br>
+<label>Upload GCash Payment Screenshot</label>
+<input type="file" accept="image/*" align="center">
+
+<button type="submit"  style="background:#0f172a;color:#fff;padding:14px 30px;border:none;border-radius:8px;font-weight:bold;cursor:pointer;">Submit Reservation</button>
+
+
+<p>
+<br>
+⚠ Reservation fee is non-refundable but transferable.
+Your booking is confirmed only after payment verification.
+
+
+</div>
+</section>
+
+
+<footer class="footer-content">
+
+Villa Navarro Beach Resort & Restaurant | 📍 Barangay Santiago Norte, Caba, La Union, Philippines
+
+
+<div class="footer-socials" >
+<a href="https://www.facebook.com/share/p/1DCWSo2xZ7/" target="_blank" rel="noopener" aria-label="Facebook">
+<img src="images/facebook-icon.svg" alt="Facebook">
+</a>
+<a href="https://pinkpuffstudios.my.canva.site/dennisa-portfolio" target="_blank" rel="noopener" aria-label="Instagram">
+<img src="images/instagram-icon.svg" alt="Instagram">
+</a>
+<a href="https://arriolaenterprises-cmyk.github.io/kaizendesigns/" target="_blank" rel="noopener" aria-label="LinkedIn">
+<img src="images/linkedin-icon.svg" alt="LinkedIn">
+</a>
+</div>
+
+</footer>
+
+<!-- Floating Buttons -->
+<div class="floating-btn">
+<a href="https://wa.me/639XXXXXXXXX" class="whatsapp">💬 WhatsApp Us</a>
+<a href="tel:+639XXXXXXXXX" class="call">📞 Call Us Now</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+new Swiper('.swiper',{loop:true,autoplay:{delay:3000}});
+</script>
+
+<script>
+var stripe = Stripe("YOUR_STRIPE_PUBLIC_KEY");
+document.getElementById("payButton").addEventListener("click", function(){
+alert("Connect this button to your backend Stripe checkout session.");
+});
+</script>
+
+</body>
+</html>
